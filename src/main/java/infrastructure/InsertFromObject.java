@@ -7,8 +7,16 @@ import presentation.PrintInTerminal;
 
 import java.sql.*;
 
-public class InsertData {
+/**
+ * Keeps methods for inserting Employee and Supplier objects into Database
+ */
+public class InsertFromObject {
 
+    /**
+     * Insert employee into database
+     * @param employee employee to insert
+     * @param myDB specify database connection
+     */
     public static void insertEmployee(Employee employee, MyDBConnection myDB){
         String SQL = "INSERT INTO employee(emp_name,emp_lastName) "
                 + "VALUES(?,?)";
@@ -28,6 +36,11 @@ public class InsertData {
         }
     }
 
+    /**
+     * Insert Supplier into database
+     * @param supplier supplier to insert
+     * @param myDB specify database connection
+     */
      public static void insertSupplier(Supplier supplier, MyDBConnection myDB){
          String SQL = "INSERT INTO supplier(supplier_name,supplier_address,tax_no) "
                  + "VALUES(?,?,?)";

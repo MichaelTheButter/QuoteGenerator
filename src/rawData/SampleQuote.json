@@ -1,0 +1,9 @@
+{
+  "supplier_id": 1,
+  "customer_id": 54,
+  "employee_id": 1,
+  "productList": [
+    { "product_id": 760, "productQuantity": 3},
+    { "product_id": 1030, "productQuantity": 10}
+  ]
+}

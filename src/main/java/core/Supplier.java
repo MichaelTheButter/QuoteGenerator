@@ -1,5 +1,8 @@
 package core;
 
+/**
+ * Supplier definition with standard methods
+ */
 public class Supplier {
     private String supplierName;
     private String address;

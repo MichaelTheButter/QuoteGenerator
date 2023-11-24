@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Database Connection manager
+ */
 public class MyDBConnection {
 
     private String sslMode = "prefer";
@@ -16,6 +19,10 @@ public class MyDBConnection {
         this.sslMode = sslMode;
     }
 
+    /**
+     * Connects with database specify in Config files
+     * @return connection
+     */
     public Connection connect() {
         Connection conn = null;
 
@@ -27,7 +34,7 @@ public class MyDBConnection {
         try {
             conn = DriverManager.getConnection(Config.getURL(), Config.getUSER(), Config.getPASSWORD());
             System.out.println("Conected successfully");
-        } catch (SQLException e) { //  | ClassNotFoundException
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return conn;

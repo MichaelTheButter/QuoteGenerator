@@ -1,5 +1,8 @@
 package core;
 
+/**
+ * Employee definition with standard methods
+ */
 public class Employee {
     private String firstName;
     private String lastName;
