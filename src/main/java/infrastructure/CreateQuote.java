@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.function.Function;
 
 /**
- * Defines methods for inserting quotations
+ * Defines methods for inserting quotes
  */
 public class CreateQuote {
 
@@ -87,9 +87,11 @@ public class CreateQuote {
         quote.setProductList(new LinkedHashMap<>());
         ArrayNode productList = (ArrayNode) rootNode.get("productList");
         for (JsonNode product : productList) {
-            JsonNode product_id = product.path("product_id");
+            JsonNode productId = product.path("product_id");
             JsonNode productQuantity = product.path("productQuantity");
-            quote.getProductList().put(product_id.asInt(), productQuantity.asInt());
+            int productIdInt = productId.asInt();
+            int productQuantityInt = productQuantity.asInt();
+            quote.getProductList().put(productIdInt, productQuantityInt);
         }
         return quote;
     }
